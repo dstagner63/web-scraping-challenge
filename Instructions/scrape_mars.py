@@ -15,13 +15,13 @@ def scrape1():
     url = "https://mars.nasa.gov/news/"
     browser.visit(url)
     time.sleep(2)
+    print(browser.html)
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
 
     news["news_title"] = soup.find('div', class_="bottom_gradient").get_text()
     news["news_p"] = soup.find('div', class_="article_teaser_body").get_text()
     
-
     return news
 
 # Scrape the data from the JPL site.
