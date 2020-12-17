@@ -63,7 +63,7 @@ def scrape3():
     url = "https://space-facts.com/mars/"
     facts_df = pd.read_html(url)[0]
     facts_df = facts_df.rename(columns={0:"Description", 1:"Data"})
-    mars_facts = facts_df.to_html()
+    mars_facts = facts_df.to_html(index=False)
     
 
     return mars_facts
