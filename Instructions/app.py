@@ -14,8 +14,13 @@ def  function_one():
     news_title = mongo.db.news_title.find_one()
     news_title = {"Title": "Fake Title"}
     news_data = scrape_mars.scrape1()
+    content_dict = {
+        "hood": news_data["news_p"],
+        "test": "hello world"
+    }
     print(news_data)
-    return render_template("index.html", title= None)
+    print(content_dict)
+    return render_template("index.html", title=news_data["news_title"], content=content_dict)
 
     
 
