@@ -7,6 +7,14 @@ def init_browser():
     executable_path = {"executable_path": "chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
+def scrape():
+    context = {}
+    context["p_data"] = scrape1()
+    context["f_image"] = scrape2()
+    context["m_facts"] = scrape3()
+    context["h_images"] = scrape4()
+    return context
+
 # Scrape the data from the NASA site.
 def scrape1():
     browser = init_browser()
